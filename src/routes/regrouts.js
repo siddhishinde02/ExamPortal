@@ -1,11 +1,7 @@
-    let routes=require("express");
-    let regCtrl=require("../controllers/resCtrl");
-    let router=routes.Router();
-    router.get("/",regCtrl.homePage);
-    router.get("/signup",regCtrl.signUpPage);
-    router.post("/register",regCtrl.regCtrl);
-    router.get("/signin",regCtrl.signInPage);
-    router.post("/validate",regCtrl.validateUser);
-    router.get("/viewprofile",regCtrl.veiwProfile);
-    router.post("/update",regCtrl.updateUser);
-    module.exports=router;
+const express = require("express");
+const router = express.Router();
+const userController = require("../controllers/resCtrl");
+
+router.get("/", userController.getProfile);
+
+module.exports = router;

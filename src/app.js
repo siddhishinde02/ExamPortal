@@ -1,19 +1,17 @@
-let express=require("express");
-let bodyparser=require("body-parser");
-let session=require("express-session");
-let router=require("../src/routes/regrouts.js");
-let conn=require("./config/db.js");
-let app=express();
+let express = require("express");
+let bodyparser = require("body-parser");
+let cors = require("cors");
+require("dotenv").config();
+const db = require("./config/db");
 
-app.use(bodyparser.urlencoded({extended:true}));                                                                                          
+let app = express();
+
+app.use(cors());
 app.use(bodyparser.json());
-app.use(session({
-    secret:"111111111fdf",
-    resave:false,
-    saveUninitialized:false
-}))
-app.use("/",router);
-app.set('view engine','ejs');
-app.use(express.static("public"));
+app.use(bodyparser.urlencoded({ extended: true }));
 
-module.exports=app;
+// Correct path to your route file
+let userRoutes = require("../src/routes/regrouts.js");
+app.use("/",userRoutes);
+
+module.exports = app;
