@@ -1,17 +1,25 @@
-let express = require("express");
-let bodyparser = require("body-parser");
-let cors = require("cors");
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv").config();
+const path = require("path");
+
+const app = express();
 const db = require("./config/db");
 
-let app = express();
-
+// Middleware
 app.use(cors());
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public")); // Serve CSS and static assets
 
-// Correct path to your route file
-let userRoutes = require("../src/routes/regrouts.js");
-app.use("/",userRoutes);
+// Set view engine
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "../views")); // Path to your views folder
 
-module.exports = app;
+// Routes
+const userRoutes = require("./routes/regrouts");
+app.use("/", userRoutes);
+
+// Export the app
+module.exports = app;
