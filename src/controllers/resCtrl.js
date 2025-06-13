@@ -1,4 +1,5 @@
 exports.getProfile = (req, res) => {
+
   res.send("Welcome to Exam Application");
 };
 
@@ -29,3 +30,9 @@ exports.postAdminLogin = (req, res) => {
     return res.render("adminlogin", { error: "Invalid username or password" });
   }
 };
+
+  res.send("Welcome to movie recommendation application");
+};
+
+// this is registration controller
+
