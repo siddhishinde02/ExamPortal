@@ -1,0 +1,1 @@
+let regmodule=require("../models/regmodel.js");
