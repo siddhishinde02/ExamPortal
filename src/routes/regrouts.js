@@ -23,14 +23,7 @@ router.get("/studentview",userController.getStudentView);
 router.get("/studentexamview",userController.getStudentExamView);
 
 
-/*siddhi's code'*/
-/*const express = require("express");*/
-/*const router = express.Router();*/
-// const userController = require("../controllers/resCtrl");
 
- /*router.get("/", userController.getProfile);*/
-// router.get("/navbar", userController.getNavBar);
-// router.get("/studentlogin", userController.getstudlogin);
 router.get("/adminlogin", userController.getadminlogin);
 router.post("/admin/login", userController.postAdminLogin);
 router.get("/admin/data", userController.getAdminData); //  IMPORTANT
