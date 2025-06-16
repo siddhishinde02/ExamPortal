@@ -1,0 +1,29 @@
+<html>
+    <head>
+ <link rel="stylesheet"href="./style.css"/>
+    </head>
+    <body>
+     
+         <center>
+    <div class="container1">
+      <label><h1>Student Registeration</h1></label>
+
+     
+      <form action="/register" method="POST">
+        <input type="text" name="sname" placeholder="Enter name"required><br><br>
+        <input type="email" name="semail" placeholder="Enter email"required><br><br>
+        <input type="text" name="scontact" placeholder="Enter contact"required><br><br>
+       
+        <input type="password" name="spassword" placeholder="Enter password"required><br><br>
+        <button type="submit">Register</button>
+        <br><br>
+     <% if (typeof message !== 'undefined') { %>
+  <p style="color: green; font-weight: bold;font-size:1.4em"><%= message %><a href="/student/validate"></a></p>
+  
+<% } %>
+
+      </form>
+    </div>
+  </center>
+    </body>
+</html> 

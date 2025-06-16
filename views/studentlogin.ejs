@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <%-include("nav.ejs")%>
+  <center>
+    <div class="container1"style="background-color:white">
+      <h1><b>Student Login</b></h1>
+
+      <form id="loginForm">
+        <input type="text" name="sname" placeholder="Enter UserName" required /><br><br>
+        <input type="password" name="spassword" placeholder="Enter Password" required /><br><br>
+      <input type="submit" id="b" value="Login"><br>
+      </form><br><br>
+
+      <!-- 👇 Show message directly after the form -->
+      <p id="message" style="color: red;"></p><br>
+
+      <p>Not registered? <a href="/studentreg">Register</a></p>
+    </div>
+  </center>
+
+  <!-- Add this script below -->
+  <script>
+    const form = document.getElementById("loginForm");
+    const messagePara = document.getElementById("message");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const sname = formData.get("sname");
+      const spassword = formData.get("spassword");
+
+      const res = await fetch("/student/validate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sname, spassword })
+      });
+
+      const result = await res.text();
+
+      if (result === "success") {
+        messagePara.style.color = "green";
+        messagePara.textContent = "Login successful! Redirecting...";
+        setTimeout(() => {
+          window.location.href = "/student/dashboard";
+        }, 1000);
+      } else {
+        messagePara.style.color = "red";
+        messagePara.textContent = result;
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <center>
+    <div class="container1">
+      <h1><b>Student Login</b></h1>
+
+      <form action="/student/validate" method="POST">
+        <input type="text" name="sname" placeholder="Enter UserName" required /><br><br>
+        <input type="password" name="spassword" placeholder="Enter Password" required /><br><br>
+        <button type="submit">Login</button>
+      </form>
+
+    
+      <% if (message) { %>
+        <p style="color: red;"><%= message %></p>
+      <% } %>
+
+      <p>Not registered? <a href="/studentreg">Register</a></p>
+    </div>
+  </center>
+</body>
+</html> 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student View</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+      margin: auto;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: lightgray;
+    }
+
+
+    /* //studdashboard
+     */
+
+
+            .slider
+{
+ 
+    width:100%;
+    height:720px;
+    border:1px solid black;
+display:flex;
+}
+.s1
+{
+  width:20%;
+  height:720px;
+  border:1px solid black;
+  background-color: #f2f2f2;;
+}
+.s2
+{
+width:80%;
+  height:720px;
+  border:1px solid black;
+}
+h1{
+    background-color: blue;
+padding:10px 10px;
+margin-top:-2px;
+color:white;
+text-align:center;
+}
+h2{
+    font-size:1.9em;
+    margin-left:30px;
+    padding-left:10px;
+}
+.s1 ul{
+  padding:20px;
+    margin-bottom: 10px;
+    list-style:none;
+
+
+}
+ul li{
+    padding:10px;
+}
+ul li a
+{
+  text-decoration:none;
+  color:blue;
+  padding:10px;
+  
+
+
+}
+ul li a:hover{
+    background-color: lightgrey;
+padding:5px;
+}
+
+th{
+    background-color:blue;
+    color:white;
+}
+  </style>
+</head>
+<body>
+ <div class="slider">
+
+         <div class="s1">
+            <h2>Student</h2>
+            <ul>
+                <li><a href="/studentview">Student View</a></li>
+                <li><a href="/studentexamview">Student Exam View</a></li>
+                <li><a href="">Download MCQ Pdf</a></li>
+                <li><a href="">Questions</a></li>
+                <li><a href="">Schedule</a></li>
+
+            </ul>
+
+    </div>
+
+       <div class="s2">
+        <h1><marquee>Welcome in Student Application</marquee></h1><br>
+
+         <h2 style="text-align: center;">Student Profile</h2><br><br>
+  <table>
+    <thead>
+      <tr>
+        <th>SID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= student.sid %></td>
+        <td><%= student.sname %></td>
+        <td><%= student.semail %></td>
+        <td><%= student.spassword %></td>
+        <td><%= student.scontact %></td>
+      </tr>
+    </tbody>
+  </table>
+        
+    </div>
+</body>
+</html>
