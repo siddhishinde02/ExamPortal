@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Login</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+ 
+<%-include("nav.ejs")%>
+  <center>
+    <div class="container1"style="background-color:white">
+      <h1>Admin Login</h1>
+
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -16,10 +27,13 @@
         <input type="submit" id="b" value="Login"><br>
       </form>
 
+
+
       <% if (typeof error !== 'undefined') { %>
         <p style="color:red;"><%= error %></p>
       <% } %>
     </div>
   </center>
-</body>
+
 </html>
+

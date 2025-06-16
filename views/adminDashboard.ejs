@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
+<body class="bg-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-teal-600 text-white text-center text-3xl font-bold py-6">
+    Welcome to the Exam Application System
+  </header>
+
+  <!-- Layout -->
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-100 text-center p-10">
+      <h2 class="text-2xl font-semibold text-center mb-6">Admin</h2>
+      <nav class="flex flex-col gap-4 text-teal-600">
+        <a href="/admin/data" class="hover:underline">Admin</a>
+        <a href="/subject" class="hover:underline">Subject</a>
+        <a href="/exam" class="hover:underline">Exam</a>
+        <a href="/questions" class="hover:underline">Questions</a>
+        <a href="/schedule" class="hover:underline">Schedule</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 p-10">
+      <h3 class="text-xl font-semibold">Dashboard Home</h3>
+      <p class="mt-2 text-gray-600">Welcome, Admin! Use the menu to navigate.</p>
+    </main>
+  </div>
+  
+
+</body>
+</html>
