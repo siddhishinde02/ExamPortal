@@ -3,6 +3,7 @@ const router = express.Router();
 const userController = require("../controllers/resCtrl");
 router.post("/register", userController.registerStudent);
 router.get("/", userController.getProfile);
+
 router.get("/navbar",userController.getNavBar);
 router.get("/studentlogin",userController.getstudlogin);
 router.get("/studentreg",userController.getStudregPage);
@@ -38,5 +39,6 @@ router.post("/exam/delete/:id", userController.deleteExam);
 
 
 module.exports = router;
+
 
 

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Login</title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -12,15 +13,27 @@
   <center>
     <div class="container1"style="background-color:white">
       <h1>Admin Login</h1>
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <center>
+    <div class="container1">
+      <h1>Admin Login</h1>
+
       <form action="/admin/login" method="POST">
         <input type="text" name="username" placeholder="Enter Username" required><br><br><br>
         <input type="password" name="password" placeholder="Enter Password" required><br><br><br>
         <input type="submit" id="b" value="Login"><br>
       </form>
+
+
+
       <% if (typeof error !== 'undefined') { %>
         <p style="color:red;"><%= error %></p>
       <% } %>
     </div>
   </center>
-</body>
+
 </html>
+
